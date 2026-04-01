@@ -7,10 +7,11 @@ export default function Hero() {
   const scale = useTransform(scrollY, [0, 400], [1, 0.95]);
 
   return (
-    <section id="home" className="h-screen w-full flex flex-col justify-center items-center relative gap-6 overflow-hidden">
+    <section id="home" className="h-screen w-full flex flex-col justify-center items-center relative gap-6 overflow-hidden bg-transparent">
+
       <motion.div
         style={{ opacity, scale }}
-        className="w-full flex flex-col items-center justify-center gap-6 z-0"
+        className="w-full flex flex-col items-center justify-center gap-6 z-10 relative"
       >
         <motion.h1
           initial={{ opacity: 0, y: 50 }}
@@ -24,7 +25,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-          className="text-3xl md:text-4xl text-zinc-400 font-light"
+          className="text-3xl md:text-4xl text-zinc-200 font-light drop-shadow-sm"
         >
           Game Designer
         </motion.p>
@@ -35,7 +36,7 @@ export default function Hero() {
         className="absolute bottom-10 flex flex-col items-center cursor-pointer z-10"
         onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
       >
-        <div className="w-[30px] h-[50px] border-2 border-white/60 rounded-full flex justify-center py-2 hover:border-white transition-opacity text-center items-start">
+        <div className="w-[30px] h-[50px] border-2 border-white/60 rounded-full flex justify-center py-2 hover:border-white transition-opacity text-center items-start bg-black/20 backdrop-blur-sm">
           <motion.div
             animate={{ y: [0, 16], opacity: [0, 1, 0] }}
             transition={{ repeat: Infinity, duration: 1.5, ease: "easeOut" }}

@@ -108,7 +108,7 @@ export default function Experience() {
   }, [selectedExp, lenis]);
 
   return (
-    <section id="experience" className="min-h-screen w-full flex flex-col justify-center px-6 py-24 bg-black">
+    <section id="experience" className="min-h-screen w-full flex flex-col justify-center px-6 py-24 bg-transparent">
       <div className="max-w-6xl mx-auto w-full">
         <div className="flex flex-col items-center mb-16">
           <h2 className="text-4xl md:text-6xl font-black uppercase text-[#0cdba0] tracking-widest text-center">My Backstory</h2>
