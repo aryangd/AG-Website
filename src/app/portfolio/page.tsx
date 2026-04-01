@@ -35,7 +35,7 @@ function TiltCard({ card }: { card: typeof cards[0] }) {
   const ref = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
-  
+
   const rotateX = useTransform(y, [-0.5, 0.5], ["5deg", "-5deg"]);
   const rotateY = useTransform(x, [-0.5, 0.5], ["-5deg", "5deg"]);
 
@@ -65,9 +65,9 @@ function TiltCard({ card }: { card: typeof cards[0] }) {
     >
       {/* Background Image with slight scale purely on hover to add parallax */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src={card.img} 
-          alt={card.title} 
+        <img
+          src={card.img}
+          alt={card.title}
           className="w-full h-full object-cover transform scale-100 group-hover:scale-110 transition-transform duration-700 ease-out"
         />
       </div>
@@ -77,14 +77,14 @@ function TiltCard({ card }: { card: typeof cards[0] }) {
         <h3 className="text-white text-[26px] md:text-3xl font-bold tracking-tight leading-tight transform group-hover:-translate-y-1 transition-transform duration-500">
           {card.title}
         </h3>
-        
+
         {/* Hidden description expanding naturally via max-height */}
         <div className="max-h-0 opacity-0 group-hover:max-h-[200px] group-hover:opacity-100 transition-all duration-500 delay-[50ms] overflow-hidden">
           <div className="flex flex-col gap-4 pt-4">
             <p className="text-white/95 text-[15px] leading-relaxed font-medium">
               {card.desc}
             </p>
-          <MousePointer2 className="w-5 h-5 text-white animate-bounce" />
+            <MousePointer2 className="w-5 h-5 text-white animate-bounce" />
           </div>
         </div>
       </div>
@@ -95,7 +95,7 @@ function TiltCard({ card }: { card: typeof cards[0] }) {
 function TypewriterStatic({ text }: { text: string }) {
   const [displayed, setDisplayed] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
-  
+
   useEffect(() => {
     let timer: NodeJS.Timeout;
     if (isDeleting) {
@@ -129,7 +129,7 @@ function TypewriterStatic({ text }: { text: string }) {
 export default function PortfolioPage() {
   return (
     <div className="min-h-screen w-full bg-[#04080f] flex flex-col relative overflow-hidden font-sans">
-      
+
       {/* Navigation aid */}
       <div className="absolute top-8 left-8 z-50">
         <Link href="/">
@@ -152,7 +152,7 @@ export default function PortfolioPage() {
       <div className="flex-1 flex flex-col justify-center items-center px-6 lg:px-32 py-20 w-full max-w-[1600px] mx-auto z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 w-full place-items-center">
           {cards.map((card, i) => (
-            <motion.div 
+            <motion.div
               key={i}
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
@@ -164,18 +164,18 @@ export default function PortfolioPage() {
             </motion.div>
           ))}
         </div>
-        
+
         {/* Typing category text below */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 1 }}
           className="mt-24 uppercase text-sm"
         >
-          <TypewriterStatic text="SELECT A CATEGORY" />
+          <TypewriterStatic text="MY WORK" />
         </motion.div>
       </div>
-      
+
     </div>
   );
 }
