@@ -6,7 +6,7 @@ export default function Skills() {
   const design = ["Figma", "UI/UX Design", "Wireframing", "Prototyping", "Design Systems", "Webflow"];
 
   return (
-    <section id="skills" className="min-h-screen w-full flex items-center justify-center px-6 py-24 bg-black">
+    <section id="skills" className="min-h-screen w-full flex items-center justify-center px-6 py-24 bg-transparent">
       <div className="max-w-5xl mx-auto w-full">
         <div className="flex flex-col mb-16">
           <h2 className="text-4xl md:text-6xl font-black uppercase text-[#0cdba0] tracking-widest">Skills</h2>
