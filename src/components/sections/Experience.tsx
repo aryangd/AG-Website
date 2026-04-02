@@ -134,7 +134,7 @@ export default function Experience() {
       <div className="max-w-6xl mx-auto w-full">
         <div className="flex flex-col items-center mb-16">
           <h2 className="text-4xl md:text-6xl font-black uppercase text-[#0cdba0] tracking-widest text-center">My Backstory</h2>
-          <div className="w-32 h-[2px] bg-white mt-6" />
+          <div className="w-32 h-[1px] bg-white mt-6" />
         </div>
 
         <div ref={ref} className="relative w-full flex flex-col">

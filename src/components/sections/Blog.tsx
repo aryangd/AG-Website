@@ -13,7 +13,7 @@ export default function Blog() {
       <div className="max-w-6xl mx-auto w-full">
         <div className="flex flex-col mb-16">
           <h2 className="text-4xl md:text-6xl font-black uppercase text-[#0cdba0] tracking-widest">Blogs</h2>
-          <div className="w-24 h-[2px] bg-white mt-6" />
+          <div className="w-24 h-[1px] bg-white mt-6" />
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -24,13 +24,13 @@ export default function Blog() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10%" }}
               transition={{ duration: 0.6, delay: i * 0.15 }}
-              className="group cursor-pointer flex flex-col gap-6"
+              className="group cursor-pointer flex flex-col gap-6 p-5 rounded-xl border border-transparent hover:shadow-[0_0_35px_rgba(12,219,160,0.4)] transition-all duration-500"
             >
-              <div className="relative overflow-hidden aspect-[4/3] rounded-sm">
+              <div className="relative overflow-hidden aspect-[4/3] rounded-lg">
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10" />
                 <img src={post.img} alt={post.title} className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-700 ease-in-out" />
               </div>
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-2 px-1">
                 <span className="text-zinc-500 font-mono text-sm">{post.date}</span>
                 <h3 className="text-2xl font-bold group-hover:text-white text-zinc-300 transition-colors">{post.title}</h3>
               </div>
