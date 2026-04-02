@@ -24,11 +24,11 @@ export default function Blog() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10%" }}
               transition={{ duration: 0.6, delay: i * 0.15 }}
-              className="group cursor-pointer flex flex-col gap-6 p-5 rounded-xl border border-transparent hover:shadow-[0_0_35px_rgba(12,219,160,0.4)] transition-all duration-500"
+              className="group cursor-pointer flex flex-col gap-6 p-5 rounded-xl border border-transparent hover:shadow-[0_0_35px_rgba(12,219,160,0.4)] transition-all duration-75"
             >
               <div className="relative overflow-hidden aspect-[4/3] rounded-lg">
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10" />
-                <img src={post.img} alt={post.title} className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-700 ease-in-out" />
+                <img src={post.img} alt={post.title} className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-150 ease-in-out" />
               </div>
               <div className="flex flex-col gap-2 px-1">
                 <span className="text-zinc-500 font-mono text-sm">{post.date}</span>

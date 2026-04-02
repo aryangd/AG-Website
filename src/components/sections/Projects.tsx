@@ -39,30 +39,30 @@ export default function Projects() {
   const typewrittenText = useTypewriter(["Experience", "Work"]);
 
   const projects = [
-    { 
-      title: "Project Downbelow", 
-      company: "Crema", 
+    {
+      title: "Project Downbelow",
+      company: "Crema",
       img: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80",
       details1: "An upcoming project currently in development.",
       details2: "Contributing to core design and mechanics."
     },
-    { 
-      title: "Vigor", 
-      company: "Bohemia Interactive", 
+    {
+      title: "Vigor",
+      company: "Bohemia Interactive",
       img: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80",
       details1: "Participated in the development of <strong>Vigor</strong>, a Third-Person Looter Shooter.",
       details2: "Focusing on weapon mechanics, analytics, and multiplayer systems."
     },
-    { 
-      title: "Howl of Iron", 
-      company: "16 Gears", 
+    {
+      title: "Howl of Iron",
+      company: "16 Gears",
       img: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80",
       details1: "This project stands out for being a <strong>Prove of Concept</strong> as a TFM of the Master's Degree in Game Design.",
       details2: "Howl of Iron is a <strong>Third-Person combat game</strong> starring a Mechanical Werewolf."
     },
-    { 
-      title: "Into the Cave", 
-      company: "Gold Pillow Games", 
+    {
+      title: "Into the Cave",
+      company: "Gold Pillow Games",
       img: "https://images.unsplash.com/photo-1614680376593-902f74cf0d41?w=800&q=80",
       details1: "An indie project focused on unique level design and core loops.",
       details2: "Involved in system design and prototyping."
@@ -94,11 +94,11 @@ export default function Projects() {
           <Link href="/portfolio">
             <button className="group relative overflow-hidden flex items-center justify-center mt-10 bg-white hover:bg-[#0cdba0] rounded-full transition-colors duration-500 w-[220px] h-[56px]">
               <div className="absolute inset-0 flex items-center justify-center gap-3 transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
-                <Briefcase className="w-5 h-5 fill-black" stroke="none" /> 
+                <Briefcase className="w-5 h-5 fill-black" stroke="none" />
                 <span className="text-black text-[15px] font-bold">View Portfolio</span>
               </div>
               <div className="absolute inset-0 flex items-center justify-center translate-y-full transition-transform duration-500 ease-in-out group-hover:translate-y-0">
-                <span className="text-white text-lg font-medium tracking-widest">GO</span>
+                <span className="text-white text-lg font-medium tracking-widest">Go!</span>
               </div>
             </button>
           </Link>
@@ -121,21 +121,21 @@ export default function Projects() {
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10" />
                 <img src={proj.img} alt={proj.title} className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-700 ease-in-out opacity-80 group-hover:opacity-100" />
               </div>
-              
+
               {/* Sliding Text Container */}
               <div className="absolute left-0 right-0 bottom-0 z-10 bg-[#222725] pt-6 px-6 transition-transform duration-500 ease-in-out translate-y-[calc(100%-90px)] group-hover:translate-y-0 flex flex-col rounded-t-lg md:rounded-t-none">
                 <div className="h-[90px] flex flex-col justify-start">
                   <h3 className="text-xl font-bold text-white tracking-wide group-hover:text-white transition-colors">{proj.title}</h3>
                   <span className="text-zinc-400 text-sm font-light mt-1">{proj.company}</span>
                 </div>
-                
+
                 <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 flex flex-col pb-8">
                   <div className="w-1/2 border-t border-dashed border-zinc-500 mb-4" />
-                  <p 
+                  <p
                     className="text-zinc-300 text-[0.9rem] font-light mb-4 leading-relaxed [&>strong]:font-bold [&>strong]:text-white"
                     dangerouslySetInnerHTML={{ __html: proj.details1 }}
                   />
-                  <p 
+                  <p
                     className="text-zinc-300 text-[0.9rem] font-light leading-relaxed [&>strong]:font-bold [&>strong]:text-white"
                     dangerouslySetInnerHTML={{ __html: proj.details2 }}
                   />
