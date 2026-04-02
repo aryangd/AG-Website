@@ -167,11 +167,15 @@ export default function Experience() {
       {/* Modal Popup */}
       <AnimatePresence>
         {selectedExp !== null && (
-          <div className="fixed inset-0 z-[100]">
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+          <motion.div
+            key="modal"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-[100]"
+          >
+            <div
               onClick={() => setSelectedExp(null)}
               className="absolute inset-0 bg-black/80 backdrop-blur-sm cursor-pointer"
             />
@@ -226,7 +230,7 @@ export default function Experience() {
                 </motion.div>
               </div>
             </div>
-          </div>
+          </motion.div>
         )}
       </AnimatePresence>
     </section>

@@ -6,7 +6,7 @@ export default function About() {
   const words = text.split(" ");
 
   return (
-    <section id="about" className="min-h-screen w-full flex items-center justify-center px-6 py-24 bg-[#0a0a0a]">
+    <section id="about" className="min-h-screen w-full flex items-center justify-center px-6 py-24 bg-black/70 backdrop-blur-sm">
       <div className="max-w-4xl mx-auto">
         <div className="flex flex-col mb-12">
           <h2 className="text-4xl md:text-6xl font-black uppercase text-[#0cdba0] tracking-widest">About</h2>

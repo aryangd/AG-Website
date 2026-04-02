@@ -9,7 +9,7 @@ export default function Blog() {
   ];
 
   return (
-    <section id="blog" className="min-h-screen w-full flex items-center justify-center px-6 py-24 bg-[#0a0a0a]">
+    <section id="blog" className="min-h-screen w-full flex items-center justify-center px-6 py-24 bg-black/70 backdrop-blur-sm">
       <div className="max-w-6xl mx-auto w-full">
         <div className="flex flex-col mb-16">
           <h2 className="text-4xl md:text-6xl font-black uppercase text-[#0cdba0] tracking-widest">Blogs</h2>
