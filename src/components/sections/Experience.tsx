@@ -1,8 +1,30 @@
 "use client";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
-import { Info, X } from "lucide-react";
+import { Info, X, ArrowRight } from "lucide-react";
 import { useRef, useState, useEffect } from "react";
 import { useLenis } from "lenis/react";
+
+const TimelineNode = ({ progress, index }: { progress: any, index: number }) => {
+  // Map each item dynamically to the parent's scroll path
+  // Since the line goes from 0.1 to 0.7 progress, we can trigger the circle precisely 
+  // as the line passes its approximate relative position (0.2, 0.4, 0.6)
+  const start = 0.15 + (index * 0.22); 
+  const end = start + 0.05;
+
+  const backgroundColor = useTransform(progress, [start, end], ["#ffffff", "#00f3ff"]);
+  const boxShadow = useTransform(
+    progress,
+    [start, end],
+    ["0px 0px 0px 0px rgba(0,243,255,0)", "0px 0px 15px 3px rgba(0,243,255,0.6)"]
+  );
+
+  return (
+    <motion.div
+      style={{ backgroundColor, boxShadow }}
+      className="absolute left-[20px] md:left-1/2 w-4 h-4 rounded-full -translate-x-1/2 mt-2 md:mt-0 z-10 transition-colors duration-150"
+    />
+  );
+};
 
 export default function Experience() {
   const experiences = [
@@ -129,12 +151,7 @@ export default function Experience() {
             {experiences.map((exp, i) => (
               <div key={i} className={`relative flex w-full flex-col md:flex-row items-start md:items-center ${exp.side === 'left' ? 'md:justify-start' : 'md:justify-end'}`}>
                 {/* Node */}
-                <motion.div
-                  initial={{ opacity: 0, scale: 0 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true, margin: "-20%" }}
-                  className="absolute left-[20px] md:left-1/2 w-4 h-4 bg-white rounded-full -translate-x-1/2 mt-2 md:mt-0 z-10"
-                />
+                <TimelineNode progress={scrollYProgress} index={i} />
 
                 {/* Content */}
                 <motion.div
@@ -153,9 +170,15 @@ export default function Experience() {
 
                   <button
                     onClick={() => setSelectedExp(i)}
-                    className="flex items-center gap-3 bg-white text-black px-5 py-2.5 rounded-full text-sm font-bold tracking-widest hover:bg-zinc-200 transition-colors"
+                    className="group relative overflow-hidden flex items-center justify-center bg-white hover:bg-[#0cdba0] rounded-full transition-colors duration-500 w-[180px] h-[48px]"
                   >
-                    <Info className="w-5 h-5" fill="black" stroke="white" /> VIEW DETAILS
+                    <div className="absolute inset-0 flex items-center justify-center gap-3 transition-transform duration-500 ease-in-out group-hover:translate-x-full">
+                      <Info className="w-5 h-5 flex-shrink-0" fill="black" stroke="white" /> 
+                      <span className="text-black text-sm font-bold tracking-widest">VIEW DETAILS</span>
+                    </div>
+                    <div className="absolute inset-0 flex items-center justify-center -translate-x-full transition-transform duration-500 ease-in-out group-hover:translate-x-0">
+                      <ArrowRight className="w-6 h-6 text-white" />
+                    </div>
                   </button>
                 </motion.div>
               </div>

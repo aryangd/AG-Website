@@ -92,8 +92,14 @@ export default function Projects() {
           </p>
 
           <Link href="/portfolio">
-            <button className="mt-10 flex items-center gap-3 bg-white text-black px-8 py-4 rounded-full text-sm font-bold hover:bg-zinc-200 transition-colors">
-              <Briefcase className="w-5 h-5 fill-black" stroke="none" /> View Portfolio
+            <button className="group relative overflow-hidden flex items-center justify-center mt-10 bg-white hover:bg-[#0cdba0] rounded-full transition-colors duration-500 w-[220px] h-[56px]">
+              <div className="absolute inset-0 flex items-center justify-center gap-3 transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
+                <Briefcase className="w-5 h-5 fill-black" stroke="none" /> 
+                <span className="text-black text-[15px] font-bold">View Portfolio</span>
+              </div>
+              <div className="absolute inset-0 flex items-center justify-center translate-y-full transition-transform duration-500 ease-in-out group-hover:translate-y-0">
+                <span className="text-white text-lg font-medium tracking-widest">GO</span>
+              </div>
             </button>
           </Link>
         </div>
