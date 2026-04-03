@@ -16,7 +16,7 @@ const categoryCards = [
     colorClass: "bg-emerald-500/90",
     shadowClass: "hover:shadow-[0_0_40px_rgba(16,185,129,0.5)]",
     desc: "Check out the games I have worked on.",
-    img: "/games-bg.jpg"
+    img: "fantasy-anime-style-scene.jpg"
   },
   {
     id: "docs",
