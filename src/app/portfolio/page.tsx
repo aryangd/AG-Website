@@ -57,7 +57,7 @@ const gamesData = [
     ],
     bgImg: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1920&q=80",
     embedId: "zJG-n22OC5w",
-    overlayImg: "/—Pngtree—muscular swordsman game character_17706551.png"
+    overlayImg: "Png1.png"
   },
   {
     id: 2,
