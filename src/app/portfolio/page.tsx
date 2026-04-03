@@ -56,7 +56,8 @@ const gamesData = [
       "Documentation and cooperation with the rest of departments."
     ],
     bgImg: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1920&q=80",
-    embedId: "QYhZcwDgEaw"
+    embedId: "zJG-n22OC5w",
+    overlayImg: "/—Pngtree—muscular swordsman game character_17706551.png"
   },
   {
     id: 2,
@@ -71,7 +72,8 @@ const gamesData = [
       "Improving core gameplay loops."
     ],
     bgImg: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&q=80",
-    embedId: "Z6yX-J1r274"
+    embedId: "Z6yX-J1r274",
+    overlayImg: "PNG2.png"
   },
   {
     id: 3,
@@ -86,7 +88,8 @@ const gamesData = [
       "Player progression and tuning."
     ],
     bgImg: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=1920&q=80",
-    embedId: "J2j-9P8Y-lQ"
+    embedId: "J2j-9P8Y-lQ",
+    overlayImg: "png3.png"
   },
   {
     id: 4,
@@ -101,7 +104,8 @@ const gamesData = [
       "UI/UX functional flows."
     ],
     bgImg: "https://images.unsplash.com/photo-1614680376593-902f74cf0d41?w=1920&q=80",
-    embedId: "dQw4w9WgXcQ"
+    embedId: "dQw4w9WgXcQ",
+    overlayImg: "png4.png"
   }
 ];
 
@@ -209,7 +213,7 @@ function GameSlide({ game }: { game: typeof gamesData[0] }) {
         <div className="absolute inset-0 bg-gradient-to-r from-[#04080f] via-transparent to-[#04080f]" />
       </div>
 
-      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-10 md:px-20 flex flex-col md:flex-row items-center justify-between gap-12">
+      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-10 md:px-20 flex flex-col md:flex-row items-start justify-between gap-12 -translate-y-16">
 
         {/* Text Content */}
         <div className="flex flex-col gap-6 w-full md:w-1/2">
@@ -236,8 +240,18 @@ function GameSlide({ game }: { game: typeof gamesData[0] }) {
         </div>
 
         {/* Video Column */}
-        <div className="w-full md:w-1/2 flex justify-center">
-          <div className="relative w-full max-w-[600px] aspect-video bg-black/50 rounded-lg overflow-hidden shadow-2xl border border-white/10 group cursor-pointer">
+        <div className="w-full md:w-1/2 flex justify-center relative">
+
+          {/* Dynamic Game Overlay Image */}
+          <div className="absolute top-[210px] right-[-150px] w-[400px] h-[500px] z-20 pointer-events-none hidden lg:block">
+            <img
+              src={game.overlayImg}
+              alt={`${game.title} Character Overlay`}
+              className="w-full h-full object-contain opacity-100"
+            />
+          </div>
+
+          <div className="relative w-full max-w-[1000px] aspect-video bg-black/50 rounded-lg overflow-hidden shadow-2xl border border-white/10 group cursor-pointer z-10 overflow-hidden">
             {!isPlaying ? (
               <div
                 className="absolute inset-0 flex items-center justify-center bg-zinc-900/50 hover:bg-black/20 transition-colors"
