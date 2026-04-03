@@ -3,6 +3,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { motion, useMotionValue, useTransform, AnimatePresence } from "framer-motion";
 import { MousePointer2, ChevronLeft, Gamepad2, Play } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 // -------------------------------------------------------------
 // GRID CATEGORY CARDS
@@ -15,7 +16,7 @@ const categoryCards = [
     colorClass: "bg-emerald-500/90",
     shadowClass: "hover:shadow-[0_0_40px_rgba(16,185,129,0.5)]",
     desc: "Check out the games I have worked on.",
-    img: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80"
+    img: "/games-bg.jpg"
   },
   {
     id: "docs",
@@ -23,8 +24,8 @@ const categoryCards = [
     color: "#ea580c",
     colorClass: "bg-orange-600/90",
     shadowClass: "hover:shadow-[0_0_50px_rgba(234,88,12,0.5)]",
-    desc: "Read the design documents I have published along with the analysis of other games.",
-    img: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80"
+    desc: "Read the design documents along with the analysis of other games.",
+    img: "https://itchronicles.com/wp-content/uploads/2021/04/Optimized-Illustration-from-Adobe-Stock-for-ITC-Post-on-AI-in-Game-Development-scaled.jpeg"
   },
   {
     id: "assets",
@@ -33,7 +34,8 @@ const categoryCards = [
     colorClass: "bg-indigo-500/90",
     shadowClass: "hover:shadow-[0_0_40px_rgba(99,102,241,0.5)]",
     desc: "Explore my released assets, tools, and visual scripting blueprints.",
-    img: "https://images.unsplash.com/photo-1614680376593-902f74cf0d41?w=800&q=80"
+    img: "https://cdn2.unrealengine.com/unreal-engine-free-marketplace-june-2022-share-1200x630-83f303d175a8.jpeg",
+    comingSoon: true
   }
 ];
 
@@ -148,6 +150,12 @@ function TiltCard({ card, onClick }: { card: typeof categoryCards[0], onClick: (
         />
       </div>
 
+      {(card as any).comingSoon && (
+        <div className="absolute top-5 right-5 z-20 bg-black/70 backdrop-blur-md px-5 py-2 rounded-full border border-white/20 shadow-xl">
+          <span className="text-xs font-normal text-white uppercase tracking-[0.2em]">Coming Soon</span>
+        </div>
+      )}
+
       <div className={`absolute bottom-0 w-full px-5 py-4 md:px-6 md:py-5 z-10 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] ${card.colorClass}`}>
         <h3 className="text-white text-[26px] md:text-3xl font-bold tracking-tight leading-tight transform group-hover:-translate-y-1 transition-transform duration-500">
           {card.title}
@@ -202,7 +210,7 @@ function GameSlide({ game }: { game: typeof gamesData[0] }) {
       </div>
 
       <div className="relative z-10 w-full max-w-[1400px] mx-auto px-10 md:px-20 flex flex-col md:flex-row items-center justify-between gap-12">
-        
+
         {/* Text Content */}
         <div className="flex flex-col gap-6 w-full md:w-1/2">
           <div className="flex flex-col">
@@ -231,7 +239,7 @@ function GameSlide({ game }: { game: typeof gamesData[0] }) {
         <div className="w-full md:w-1/2 flex justify-center">
           <div className="relative w-full max-w-[600px] aspect-video bg-black/50 rounded-lg overflow-hidden shadow-2xl border border-white/10 group cursor-pointer">
             {!isPlaying ? (
-              <div 
+              <div
                 className="absolute inset-0 flex items-center justify-center bg-zinc-900/50 hover:bg-black/20 transition-colors"
                 onClick={() => setIsPlaying(true)}
               >
@@ -241,12 +249,12 @@ function GameSlide({ game }: { game: typeof gamesData[0] }) {
                 </div>
               </div>
             ) : (
-              <iframe 
+              <iframe
                 className="w-full h-full"
-                src={`https://www.youtube.com/embed/${game.embedId}?autoplay=1`} 
-                title="YouTube video player" 
-                frameBorder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                src={`https://www.youtube.com/embed/${game.embedId}?autoplay=1`}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
             )}
@@ -262,6 +270,7 @@ function GameSlide({ game }: { game: typeof gamesData[0] }) {
 // MAIN COMPONENT
 // -------------------------------------------------------------
 export default function PortfolioPage() {
+  const router = useRouter();
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
@@ -300,10 +309,10 @@ export default function PortfolioPage() {
 
     const renderSmoothScroll = () => {
       if (!el) return;
-      
+
       // Lerp (easing factor of 0.1 for buttery smoothness)
       el.scrollLeft += (targetScroll - el.scrollLeft) * 0.1;
-      
+
       if (Math.abs(targetScroll - el.scrollLeft) > 1) {
         requestAnimationFrame(renderSmoothScroll);
       } else {
@@ -315,10 +324,10 @@ export default function PortfolioPage() {
     const handleWheel = (e: WheelEvent) => {
       // Prevent vertical page scroll default
       e.preventDefault();
-      
+
       // Support both vertical wheel and horizontal trackpad swipe
       const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
-      
+
       if (!isScrolling) {
         targetScroll = el.scrollLeft;
       }
@@ -328,17 +337,17 @@ export default function PortfolioPage() {
 
       // Clamp target within bounds
       targetScroll = Math.max(0, Math.min(targetScroll, el.scrollWidth - el.clientWidth));
-      
+
       // Ignite 60fps render loop
       if (!isScrolling) {
         isScrolling = true;
         requestAnimationFrame(renderSmoothScroll);
       }
     };
-    
+
     el.addEventListener("scroll", handleScroll);
     el.addEventListener("wheel", handleWheel, { passive: false });
-    
+
     return () => {
       el.removeEventListener("scroll", handleScroll);
       el.removeEventListener("wheel", handleWheel);
@@ -357,25 +366,26 @@ export default function PortfolioPage() {
       {/* Main Base Portfolio Elements (only visible when NO category is active) */}
       <AnimatePresence>
         {!activeCategory && (
-          <motion.div 
-            initial={{ opacity: 0 }} 
-            animate={{ opacity: 1 }} 
-            exit={{ opacity: 0 }} 
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
             className="absolute inset-0 z-10 flex flex-col"
           >
             {/* Navigation aid */}
             <div className="absolute top-8 left-8 z-50">
-              <Link href="/">
-                <button className="flex items-center gap-2 text-white/50 hover:text-white transition-colors">
-                  <ChevronLeft className="w-5 h-5" /> Back to Home
-                </button>
-              </Link>
+              <button
+                onClick={() => router.back()}
+                className="flex items-center gap-2 text-white/50 hover:text-white transition-colors"
+              >
+                <ChevronLeft className="w-5 h-5" /> Back
+              </button>
             </div>
 
             {/* Huge Vertical Portfolio Text */}
             <div className="absolute left-8 lg:left-14 top-1/2 -translate-y-1/2 select-none pointer-events-none z-0 hidden lg:block">
-              <motion.div 
+              <motion.div
                 style={{ x: parallaxX, y: parallaxY }}
                 transition={{ type: "spring", stiffness: 100, damping: 30 }}
                 className="flex flex-col items-center gap-0"
@@ -390,7 +400,7 @@ export default function PortfolioPage() {
 
             {/* Massive Gaming Controller Watermark */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none pointer-events-none z-0 hidden md:block">
-              <motion.div 
+              <motion.div
                 style={{ x: parallaxX, y: parallaxY }}
                 transition={{ type: "spring", stiffness: 100, damping: 30 }}
               >
@@ -443,7 +453,7 @@ export default function PortfolioPage() {
           >
             {/* Back Button */}
             <div className="absolute top-8 left-8 z-50">
-              <button 
+              <button
                 onClick={() => setActiveCategory(null)}
                 className="flex items-center gap-2 text-white/70 hover:text-white transition-colors uppercase tracking-widest text-sm font-bold"
               >
@@ -456,7 +466,7 @@ export default function PortfolioPage() {
               {/* Connecting line visually behind */}
               <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-[1px] bg-white/20 -z-10" />
               {gamesData.map((_, i) => (
-                <button 
+                <button
                   key={i}
                   onClick={() => scrollToSlide(i)}
                   className={`w-10 h-10 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-300 relative z-10 ${activeIndex === i ? 'bg-white text-black scale-110 shadow-[0_0_15px_rgba(255,255,255,0.5)]' : 'bg-[#04080f] text-white border border-white/30 hover:border-white'}`}
@@ -467,15 +477,16 @@ export default function PortfolioPage() {
             </div>
 
             {/* Horizontal Scroll Container */}
-            <div 
+            <div
               ref={scrollRef}
               className="flex h-screen w-full overflow-x-auto scrollbar-hide"
               style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
-              <style dangerouslySetInnerHTML={{__html: `
+              <style dangerouslySetInnerHTML={{
+                __html: `
                 .scrollbar-hide::-webkit-scrollbar { display: none; }
               `}} />
-              
+
               {gamesData.map((game) => (
                 <GameSlide key={game.id} game={game} />
               ))}

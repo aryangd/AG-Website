@@ -83,7 +83,7 @@ function GameSlide({ game }: { game: typeof games[0] }) {
       </div>
 
       <div className="relative z-10 w-full max-w-[1400px] mx-auto px-20 flex flex-col md:flex-row items-center justify-between gap-12">
-        
+
         {/* Text Content */}
         <div className="flex flex-col gap-6 w-full md:w-1/2">
           <div className="flex flex-col">
@@ -112,7 +112,7 @@ function GameSlide({ game }: { game: typeof games[0] }) {
         <div className="w-full md:w-1/2 flex justify-center">
           <div className="relative w-full max-w-[600px] aspect-video bg-black rounded-lg overflow-hidden shadow-2xl border border-white/10 group cursor-pointer">
             {!isPlaying ? (
-              <div 
+              <div
                 className="absolute inset-0 flex items-center justify-center bg-zinc-900/50 hover:bg-black/20 transition-colors"
                 onClick={() => setIsPlaying(true)}
               >
@@ -122,12 +122,12 @@ function GameSlide({ game }: { game: typeof games[0] }) {
                 </div>
               </div>
             ) : (
-              <iframe 
+              <iframe
                 className="w-full h-full"
-                src={`https://www.youtube.com/embed/${game.embedId}?autoplay=1`} 
-                title="YouTube video player" 
-                frameBorder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                src={`https://www.youtube.com/embed/${game.embedId}?autoplay=1`}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
             )}
@@ -161,10 +161,10 @@ export default function GamesShowcase() {
         el.scrollBy({ left: e.deltaY * 1.5, behavior: "auto" });
       }
     };
-    
+
     el.addEventListener("scroll", handleScroll);
     el.addEventListener("wheel", handleWheel, { passive: false });
-    
+
     return () => {
       el.removeEventListener("scroll", handleScroll);
       el.removeEventListener("wheel", handleWheel);
@@ -179,7 +179,7 @@ export default function GamesShowcase() {
 
   return (
     <div className="min-h-screen w-full bg-black flex flex-col relative overflow-hidden font-sans">
-      
+
       {/* Back Button */}
       <div className="absolute top-8 left-8 z-50 mix-blend-difference">
         <Link href="/portfolio">
@@ -192,7 +192,7 @@ export default function GamesShowcase() {
       {/* Pagination Line on Left */}
       <div className="absolute left-8 top-1/2 -translate-y-1/2 z-50 flex flex-col items-center gap-6 mix-blend-difference">
         {games.map((_, i) => (
-          <button 
+          <button
             key={i}
             onClick={() => scrollToSlide(i)}
             className={`w-10 h-10 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-300 ${activeIndex === i ? 'bg-white text-black scale-110 shadow-[0_0_15px_rgba(255,255,255,0.5)]' : 'bg-transparent text-white border border-white/30 hover:border-white'}`}
@@ -205,15 +205,16 @@ export default function GamesShowcase() {
       </div>
 
       {/* Horizontal Scroll Container */}
-      <div 
+      <div
         ref={scrollRef}
         className="flex h-screen w-full overflow-x-auto snap-x snap-mandatory scrollbar-hide smooth-scroll"
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
-        <style dangerouslySetInnerHTML={{__html: `
+        <style dangerouslySetInnerHTML={{
+          __html: `
           .scrollbar-hide::-webkit-scrollbar { display: none; }
         `}} />
-        
+
         {games.map((game, i) => (
           <GameSlide key={i} game={game} />
         ))}

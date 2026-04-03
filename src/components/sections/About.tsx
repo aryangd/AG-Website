@@ -4,7 +4,7 @@ import { Mail } from "lucide-react";
 
 export default function About() {
   return (
-    <section id="about" className="min-h-screen w-full flex flex-col items-center justify-center px-6 py-24 bg-black/70 backdrop-blur-sm">
+    <section id="about" className="min-h-screen w-full flex flex-col items-center justify-center px-6 py-24 bg-black/70 backdrop-blur-[0.5px]">
       <div className="max-w-4xl mx-auto flex flex-col items-center text-center mt-10">
 
         {/* Subtitle */}

@@ -70,7 +70,7 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="min-h-screen w-full flex items-center justify-center px-6 py-24 bg-black/70 backdrop-blur-sm">
+    <section id="projects" className="min-h-screen w-full flex items-center justify-center px-6 py-24 bg-black/70 backdrop-blur-[0.5px]">
       <div className="max-w-7xl mx-auto w-full flex flex-col lg:flex-row gap-16 lg:gap-8 justify-between items-start">
 
         {/* Left Side: Title & Description */}
