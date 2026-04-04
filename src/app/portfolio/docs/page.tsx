@@ -14,7 +14,7 @@ const documents = [
     hexColor: "#1e40af",
     accentColor: "border-blue-400",
     image: "/Png1.png",
-    pdfUrl: "/docs/5-Character-System-Design.pdf"
+    pdfUrl: "/docs/5-game-design-theory-and-practice.pdf"
   },
   {
     id: 2,
