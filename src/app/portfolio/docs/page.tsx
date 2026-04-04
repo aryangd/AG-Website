@@ -16,7 +16,7 @@ const documents = [
     hexColor: "#1e40af",
     accentColor: "border-blue-400",
     image: `${prefix}/Png1.png`,
-    pdfUrl: `${prefix}/docs/5-game-design-theory-and-practice.pdf`
+    pdfUrl: "/docs/5-game-design-theory-and-practice.pdf"
   },
   {
     id: 2,
@@ -27,7 +27,7 @@ const documents = [
     hexColor: "#059669",
     accentColor: "border-emerald-400",
     image: `${prefix}/PNG2.png`,
-    pdfUrl: `${prefix}/docs/excel_system.pdf`,
+    pdfUrl: "/docs/excel_system.pdf",
     isRecommended: true
   },
   {
@@ -39,7 +39,7 @@ const documents = [
     hexColor: "#c2410c",
     accentColor: "border-orange-400",
     image: `${prefix}/mechanical_werewolf_game_art.png`,
-    pdfUrl: `${prefix}/docs/gameplay_design.pdf`
+    pdfUrl: "/docs/gameplay_design.pdf"
   }
 ];
 

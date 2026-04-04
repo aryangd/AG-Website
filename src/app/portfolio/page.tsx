@@ -118,7 +118,7 @@ const docsData = [
     description: "Detailed system design for character scaling and data management in Howl of Iron.",
     hexColor: "30, 64, 175", // RGB Blue
     image: `${prefix}/Png1.png`,
-    pdfUrl: `${prefix}/docs/5-game-design-theory-and-practice.pdf`
+    pdfUrl: "/docs/5-game-design-theory-and-practice.pdf"
   },
   {
     id: 2,
@@ -126,7 +126,7 @@ const docsData = [
     description: "Read how the Data-Driven system I designed for Howl of Iron would work through Excel-based datasets.",
     hexColor: "5, 150, 105", // RGB Green
     image: `${prefix}/PNG2.png`,
-    pdfUrl: `${prefix}/docs/excel_system.pdf`
+    pdfUrl: "/docs/excel_system.pdf"
   },
   {
     id: 3,
@@ -134,7 +134,7 @@ const docsData = [
     description: "Core gameplay mechanics and combat system documentation for the mechanical werewolf project.",
     hexColor: "194, 65, 12", // RGB Orange
     image: `${prefix}/mechanical_werewolf_game_art.png`,
-    pdfUrl: `${prefix}/docs/gameplay_design.pdf`
+    pdfUrl: "/docs/gameplay_design.pdf"
   },
   {
     id: 4,
@@ -142,7 +142,7 @@ const docsData = [
     description: "In-depth analysis of stealth encounters and spatial storytelling within industrial environments.",
     hexColor: "147, 51, 234", // RGB Purple
     image: "https://images.unsplash.com/photo-1614680376593-902f74cf0d41?w=800&q=80",
-    pdfUrl: `${prefix}/docs/level_design.pdf`
+    pdfUrl: "/docs/level_design.pdf"
   },
   {
     id: 5,
@@ -150,7 +150,7 @@ const docsData = [
     description: "An evaluation of tactical AI behaviors and weapon feedback loop design for futuristic shooters.",
     hexColor: "225, 29, 72", // RGB Pink/Red
     image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80",
-    pdfUrl: `${prefix}/docs/combat_analysis.pdf`
+    pdfUrl: "/docs/combat_analysis.pdf"
   }
 ];
 
