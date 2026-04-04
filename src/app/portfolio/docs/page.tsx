@@ -119,7 +119,7 @@ function DocCard({ doc, isHovered, onHover, onLeave }: {
                       className="bg-white text-black px-10 py-3 rounded-full flex items-center gap-3 font-medium text-xs uppercase tracking-[0.2em] hover:bg-zinc-200 transition-all hover:scale-105 active:scale-95 shadow-[0_10px_20px_rgba(0,0,0,0.3)]"
                     >
                       <FileText className="w-5 h-5" />
-                      ENGLISH
+                      READ
                     </Link>
                   </div>
                 </motion.div>

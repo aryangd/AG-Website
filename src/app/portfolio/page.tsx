@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef, useState, useEffect } from "react";
 import { motion, useMotionValue, useTransform, AnimatePresence } from "framer-motion";
-import { MousePointer2, ChevronLeft, Gamepad2, Play, FileText } from "lucide-react";
+import { MousePointer2, ChevronLeft, Gamepad2, Play, FileText, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
@@ -306,12 +306,12 @@ function DocCard({ doc, isHovered, onHover, onLeave }: { doc: typeof docsData[0]
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
       </div>
       <div className="absolute inset-x-0 top-1/4 flex items-center justify-center p-8 z-10 pointer-events-none">
-         <div className="text-center group-hover:scale-105 transition-transform duration-500">
-            <h2 className="text-white font-black text-5xl tracking-widest opacity-80 flex flex-col items-center">
-              <span className="text-xs tracking-[0.5em] mb-4">A GAME BY 16 GEARS</span>
-              HOWL OF IRON
-            </h2>
-         </div>
+        <div className="text-center group-hover:scale-105 transition-transform duration-500">
+          <h2 className="text-white font-black text-5xl tracking-widest opacity-80 flex flex-col items-center">
+            <span className="text-xs tracking-[0.5em] mb-4">A GAME BY 16 GEARS</span>
+            HOWL OF IRON
+          </h2>
+        </div>
       </div>
       <motion.div animate={{ height: isHovered ? "50%" : "25%" }} className="absolute inset-x-0 bottom-0 z-20 overflow-hidden flex flex-col">
         <motion.div animate={{ backgroundColor: isHovered ? "rgba(0,0,0,0.95)" : `rgba(${doc.hexColor}, 0.4)` }} className="absolute inset-0 z-0 backdrop-blur-sm" />
@@ -323,10 +323,19 @@ function DocCard({ doc, isHovered, onHover, onLeave }: { doc: typeof docsData[0]
                 <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }} transition={{ delay: 0.1 }}>
                   <p className="text-white/90 text-sm mb-6 leading-relaxed font-medium">{doc.description}</p>
                   <div className="flex items-center justify-center">
-                     <Link href={doc.pdfUrl} target="_blank" className="bg-white text-black px-10 py-3 rounded-full flex items-center gap-3 font-medium text-xs uppercase tracking-[0.2em] hover:bg-zinc-200 transition-all hover:scale-105">
-                       <FileText className="w-5 h-5" />
-                       ENGLISH
-                     </Link>
+                    <Link
+                      href={doc.pdfUrl}
+                      target="_blank"
+                      className="group/btn relative overflow-hidden flex items-center justify-center bg-white hover:bg-[#0cdba0] rounded-full transition-colors duration-500 w-[220px] h-[56px] shadow-[0_10px_20px_rgba(0,0,0,0.3)]"
+                    >
+                      <div className="absolute inset-0 flex items-center justify-center gap-3 transition-transform duration-500 ease-in-out group-hover/btn:-translate-y-full">
+                        <FileText className="w-5 h-5 text-black" />
+                        <span className="text-black text-[15px] font-bold uppercase tracking-wider">READ</span>
+                      </div>
+                      <div className="absolute inset-0 flex items-center justify-center translate-y-full transition-transform duration-500 ease-in-out group-hover/btn:translate-y-0">
+                        <ArrowRight className="w-8 h-8 text-white" />
+                      </div>
+                    </Link>
                   </div>
                 </motion.div>
               )}
@@ -403,7 +412,7 @@ export default function PortfolioPage() {
 
     const handleWheel = (e: WheelEvent) => {
       e.preventDefault();
-      const delta = activeCategory === 'games' 
+      const delta = activeCategory === 'games'
         ? (Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY)
         : e.deltaY;
 
@@ -438,7 +447,7 @@ export default function PortfolioPage() {
 
   return (
     <div onMouseMove={handleMouseMove} className="min-h-screen w-full bg-transparent flex flex-col relative overflow-hidden font-sans">
-      
+
       {/* Dynamic atmospheric video background (same as home) */}
       <div className="fixed inset-0 w-full h-full z-0 pointer-events-none opacity-40">
         <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover">
