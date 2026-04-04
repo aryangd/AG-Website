@@ -4,6 +4,8 @@ import { ChevronLeft, FileText, Download } from "lucide-react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
+const prefix = process.env.NODE_ENV === "production" ? "/AG-Website" : "";
+
 const documents = [
   {
     id: 1,
@@ -13,8 +15,8 @@ const documents = [
     bgColor: "bg-[#1e40af]",
     hexColor: "#1e40af",
     accentColor: "border-blue-400",
-    image: "/Png1.png",
-    pdfUrl: "/docs/5-game-design-theory-and-practice.pdf"
+    image: `${prefix}/Png1.png`,
+    pdfUrl: `${prefix}/docs/5-game-design-theory-and-practice.pdf`
   },
   {
     id: 2,
@@ -24,8 +26,8 @@ const documents = [
     bgColor: "bg-[#059669]",
     hexColor: "#059669",
     accentColor: "border-emerald-400",
-    image: "/PNG2.png",
-    pdfUrl: "/docs/excel_system.pdf",
+    image: `${prefix}/PNG2.png`,
+    pdfUrl: `${prefix}/docs/excel_system.pdf`,
     isRecommended: true
   },
   {
@@ -36,8 +38,8 @@ const documents = [
     bgColor: "bg-[#c2410c]",
     hexColor: "#c2410c",
     accentColor: "border-orange-400",
-    image: "/mechanical_werewolf_game_art.png",
-    pdfUrl: "/docs/gameplay_design.pdf"
+    image: `${prefix}/mechanical_werewolf_game_art.png`,
+    pdfUrl: `${prefix}/docs/gameplay_design.pdf`
   }
 ];
 
@@ -150,7 +152,7 @@ export default function GameDocsPage() {
       {/* Fixed background video (Same as Home) */}
       <div className="fixed inset-0 w-full h-full z-0 pointer-events-none opacity-40">
         <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover">
-          <source src="/website-bg.mp4" type="video/mp4" />
+          <source src={`${prefix}/website-bg.mp4`} type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/20" />
       </div>
