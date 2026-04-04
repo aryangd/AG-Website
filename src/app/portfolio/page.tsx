@@ -5,6 +5,8 @@ import { MousePointer2, ChevronLeft, Gamepad2, Play, FileText, ArrowRight } from
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
+const prefix = process.env.NODE_ENV === "production" ? "/AG-Website" : "";
+
 // -------------------------------------------------------------
 // GRID CATEGORY CARDS
 // -------------------------------------------------------------
@@ -16,7 +18,7 @@ const categoryCards = [
     colorClass: "bg-emerald-500/90",
     shadowClass: "hover:shadow-[0_0_40px_rgba(16,185,129,0.5)]",
     desc: "Check out the games I have worked on.",
-    img: "fantasy-anime-style-scene.jpg"
+    img: `${prefix}/fantasy-anime-style-scene.jpg`
   },
   {
     id: "docs",
@@ -57,7 +59,7 @@ const gamesData = [
     ],
     bgImg: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1920&q=80",
     embedId: "zJG-n22OC5w",
-    overlayImg: "Png1.png"
+    overlayImg: `${prefix}/Png1.png`
   },
   {
     id: 2,
@@ -73,7 +75,7 @@ const gamesData = [
     ],
     bgImg: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&q=80",
     embedId: "Z6yX-J1r274",
-    overlayImg: "PNG2.png"
+    overlayImg: `${prefix}/PNG2.png`
   },
   {
     id: 3,
@@ -89,7 +91,7 @@ const gamesData = [
     ],
     bgImg: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=1920&q=80",
     embedId: "J2j-9P8Y-lQ",
-    overlayImg: "png3.png"
+    overlayImg: `${prefix}/png3.png`
   },
   {
     id: 4,
@@ -105,7 +107,7 @@ const gamesData = [
     ],
     bgImg: "https://images.unsplash.com/photo-1614680376593-902f74cf0d41?w=1920&q=80",
     embedId: "dQw4w9WgXcQ",
-    overlayImg: "png4.png"
+    overlayImg: `${prefix}/png4.png`
   }
 ];
 
@@ -115,24 +117,24 @@ const docsData = [
     title: "Howl of Iron - Data-Driven Character System",
     description: "Detailed system design for character scaling and data management in Howl of Iron.",
     hexColor: "30, 64, 175", // RGB Blue
-    image: "/Png1.png",
-    pdfUrl: "/docs/5-game-design-theory-and-practice.pdf"
+    image: `${prefix}/Png1.png`,
+    pdfUrl: `${prefix}/docs/5-game-design-theory-and-practice.pdf`
   },
   {
     id: 2,
     title: "Howl of Iron - Data-Driven Character System «EXCEL»",
     description: "Read how the Data-Driven system I designed for Howl of Iron would work through Excel-based datasets.",
     hexColor: "5, 150, 105", // RGB Green
-    image: "/PNG2.png",
-    pdfUrl: "/docs/excel_system.pdf"
+    image: `${prefix}/PNG2.png`,
+    pdfUrl: `${prefix}/docs/excel_system.pdf`
   },
   {
     id: 3,
     title: "Howl of Iron - Gameplay Design",
     description: "Core gameplay mechanics and combat system documentation for the mechanical werewolf project.",
     hexColor: "194, 65, 12", // RGB Orange
-    image: "/mechanical_werewolf_game_art.png",
-    pdfUrl: "/docs/gameplay_design.pdf"
+    image: `${prefix}/mechanical_werewolf_game_art.png`,
+    pdfUrl: `${prefix}/docs/gameplay_design.pdf`
   },
   {
     id: 4,
@@ -140,7 +142,7 @@ const docsData = [
     description: "In-depth analysis of stealth encounters and spatial storytelling within industrial environments.",
     hexColor: "147, 51, 234", // RGB Purple
     image: "https://images.unsplash.com/photo-1614680376593-902f74cf0d41?w=800&q=80",
-    pdfUrl: "/docs/level_design.pdf"
+    pdfUrl: `${prefix}/docs/level_design.pdf`
   },
   {
     id: 5,
@@ -148,7 +150,7 @@ const docsData = [
     description: "An evaluation of tactical AI behaviors and weapon feedback loop design for futuristic shooters.",
     hexColor: "225, 29, 72", // RGB Pink/Red
     image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80",
-    pdfUrl: "/docs/combat_analysis.pdf"
+    pdfUrl: `${prefix}/docs/combat_analysis.pdf`
   }
 ];
 
@@ -451,7 +453,7 @@ export default function PortfolioPage() {
       {/* Dynamic atmospheric video background (same as home) */}
       <div className="fixed inset-0 w-full h-full z-0 pointer-events-none opacity-40">
         <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover">
-          <source src="/website-bg.mp4" type="video/mp4" />
+          <source src={`${prefix}/website-bg.mp4`} type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/20" />
       </div>

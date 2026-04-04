@@ -8,6 +8,8 @@ import Footer from "@/components/sections/Footer";
 import Navigation from "@/components/Navigation";
 
 export default function Home() {
+  const prefix = process.env.NODE_ENV === "production" ? "/AG-Website" : "";
+
   return (
     <main className="flex flex-col w-full min-h-screen relative overflow-hidden text-white">
       {/* Fixed background video for alternate sections */}
@@ -19,7 +21,7 @@ export default function Home() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="./website-bg.mp4" type="video/mp4" />
+          <source src={`${prefix}/website-bg.mp4`} type="video/mp4" />
         </video>
         {/* Dark Overlay globally */}
         <div className="absolute inset-0 bg-black/60" />
