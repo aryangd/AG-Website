@@ -114,7 +114,7 @@ const gamesData = [
 const docsData = [
   {
     id: 1,
-    gameName: "",
+    gameName: "WWE MAYHEM",
     developer: "RELIANCE GAMES",
     title: "WWE Mayhem - Character Design",
     description: "Detailed system design for character scaling and data management in WWE Mayhem.",

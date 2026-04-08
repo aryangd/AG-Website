@@ -9,6 +9,8 @@ const prefix = process.env.NODE_ENV === "production" ? "/AG-Website" : "";
 const documents = [
   {
     id: 1,
+    gameName: "WWE MAYHEM",
+    developer: "RELIANCE GAMES",
     title: "WWE Mayhem - Character Design",
     shortTitle: "Character Design",
     description: "Detailed system design for character scaling and data management in WWE Mayhem.",
