@@ -29,9 +29,9 @@ const TimelineNode = ({ progress, index }: { progress: any, index: number }) => 
 export default function Experience() {
   const experiences = [
     {
-      role: "Game Designer",
-      company: "Crema",
-      duration: "2024 - Present",
+      role: "Game Design Intern",
+      company: "Seamedu School of Design & Technology",
+      duration: "2022",
       desc: [
         "Working with the developers of Temtem in a new project from conception to the release.",
         "Specialized in Combat & AI."

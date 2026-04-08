@@ -7,9 +7,9 @@ import { motion } from "framer-motion";
 const games = [
   {
     id: 1,
-    title: "Project Downbelow",
-    year: "2024 - Present",
-    company: "Crema",
+    title: "WWE Mayhem",
+    year: "2023 - 2025",
+    company: "Reliance Games",
     desc: "I am working with the Game Design team in order to define the core mechanics for the game.",
     bullets: [
       "Developing the game from conception to release.",
@@ -17,7 +17,7 @@ const games = [
       "Game balance.",
       "Documentation and cooperation with the rest of departments."
     ],
-    bgImg: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1920&q=80",
+    bgImg: "WWEMayhembg.jpg",
     embedId: "QYhZcwDgEaw", // Placeholder temtem trailer or similar
     align: "left"
   },

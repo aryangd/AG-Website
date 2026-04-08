@@ -9,17 +9,19 @@ const prefix = process.env.NODE_ENV === "production" ? "/AG-Website" : "";
 const documents = [
   {
     id: 1,
-    title: "Howl of Iron - Data-Driven Character System",
-    shortTitle: "Data-Driven Character System",
-    description: "Detailed system design for character scaling and data management in Howl of Iron.",
+    title: "WWE Mayhem - Character Design",
+    shortTitle: "Character Design",
+    description: "Detailed system design for character scaling and data management in WWE Mayhem.",
     bgColor: "bg-[#1e40af]",
     hexColor: "#1e40af",
     accentColor: "border-blue-400",
-    image: `${prefix}/Png1.png`,
+    image: `${prefix}/WWEMayhembg.jpg`,
     pdfUrl: "/docs/5-game-design-theory-and-practice.pdf"
   },
   {
     id: 2,
+    gameName: "HOWL OF IRON",
+    developer: "16 GEARS",
     title: "Howl of Iron - Data-Driven Character System",
     shortTitle: "Data-Driven Character System",
     description: "Read how the Data-Driven system I designed for Howl of Iron would work through Excel-based datasets.",
@@ -32,6 +34,8 @@ const documents = [
   },
   {
     id: 3,
+    gameName: "HOWL OF IRON",
+    developer: "16 GEARS",
     title: "Howl of Iron - Gameplay Design",
     shortTitle: "Gameplay Design",
     description: "Core gameplay mechanics and combat system documentation for the mechanical werewolf project.",
@@ -44,7 +48,7 @@ const documents = [
 ];
 
 function DocCard({ doc, isHovered, onHover, onLeave }: {
-  doc: typeof documents[0],
+  doc: typeof documents[0] & { gameName: string, developer: string },
   isHovered: boolean,
   onHover: () => void,
   onLeave: () => void
@@ -77,8 +81,8 @@ function DocCard({ doc, isHovered, onHover, onLeave }: {
       <div className="absolute inset-x-0 top-1/4 flex items-center justify-center p-8 z-10 pointer-events-none">
         <div className="text-center group-hover:scale-105 transition-transform duration-500">
           <h2 className="text-white font-black text-5xl tracking-widest opacity-80 flex flex-col items-center">
-            <span className="text-sm tracking-[0.5em] mb-4">A GAME BY 16 GEARS</span>
-            HOWL OF IRON
+            <span className="text-sm tracking-[0.5em] mb-4 uppercase">A GAME BY {doc.developer}</span>
+            {doc.gameName}
           </h2>
         </div>
       </div>

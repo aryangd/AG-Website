@@ -47,9 +47,9 @@ const categoryCards = [
 const gamesData = [
   {
     id: 1,
-    title: "Project Downbelow",
-    year: "2024 - Present",
-    company: "Crema",
+    title: "WWE Mayhem",
+    year: "2023-2025",
+    company: "Reliance Games",
     desc: "I am working with the Game Design team in order to define the core mechanics for the game.",
     bullets: [
       "Developing the game from conception to release.",
@@ -57,9 +57,9 @@ const gamesData = [
       "Game balance.",
       "Documentation and cooperation with the rest of departments."
     ],
-    bgImg: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1920&q=80",
+    bgImg: "WWEMayhembg.jpg",
     embedId: "zJG-n22OC5w",
-    overlayImg: `${prefix}/Png1.png`
+    overlayImg: `${prefix}/JohnCena.png`
   },
   {
     id: 2,
@@ -114,14 +114,18 @@ const gamesData = [
 const docsData = [
   {
     id: 1,
-    title: "Howl of Iron - Data-Driven Character System",
-    description: "Detailed system design for character scaling and data management in Howl of Iron.",
+    gameName: "",
+    developer: "RELIANCE GAMES",
+    title: "WWE Mayhem - Character Design",
+    description: "Detailed system design for character scaling and data management in WWE Mayhem.",
     hexColor: "30, 64, 175", // RGB Blue
-    image: `${prefix}/Png1.png`,
+    image: `${prefix}/WWEMayhembg.jpg`,
     pdfUrl: "/docs/5-game-design-theory-and-practice.pdf"
   },
   {
     id: 2,
+    gameName: "HOWL OF IRON",
+    developer: "16 GEARS",
     title: "Howl of Iron - Data-Driven Character System «EXCEL»",
     description: "Read how the Data-Driven system I designed for Howl of Iron would work through Excel-based datasets.",
     hexColor: "5, 150, 105", // RGB Green
@@ -130,6 +134,8 @@ const docsData = [
   },
   {
     id: 3,
+    gameName: "HOWL OF IRON",
+    developer: "16 GEARS",
     title: "Howl of Iron - Gameplay Design",
     description: "Core gameplay mechanics and combat system documentation for the mechanical werewolf project.",
     hexColor: "194, 65, 12", // RGB Orange
@@ -138,6 +144,8 @@ const docsData = [
   },
   {
     id: 4,
+    gameName: "THE MASTER THIEF",
+    developer: "INDEPENDENT",
     title: "The Master Thief - Level Design & Narrative",
     description: "In-depth analysis of stealth encounters and spatial storytelling within industrial environments.",
     hexColor: "147, 51, 234", // RGB Purple
@@ -146,6 +154,8 @@ const docsData = [
   },
   {
     id: 5,
+    gameName: "SCI-FI FPS",
+    developer: "INDEPENDENT",
     title: "Sci-Fi FPS - Combat & AI Analysis",
     description: "An evaluation of tactical AI behaviors and weapon feedback loop design for futuristic shooters.",
     hexColor: "225, 29, 72", // RGB Pink/Red
@@ -309,9 +319,9 @@ function DocCard({ doc, isHovered, onHover, onLeave }: { doc: typeof docsData[0]
       </div>
       <div className="absolute inset-x-0 top-1/4 flex items-center justify-center p-8 z-10 pointer-events-none">
         <div className="text-center group-hover:scale-105 transition-transform duration-500">
-          <h2 className="text-white font-black text-5xl tracking-widest opacity-80 flex flex-col items-center">
-            <span className="text-xs tracking-[0.5em] mb-4">A GAME BY 16 GEARS</span>
-            HOWL OF IRON
+          <h2 className="text-white font-black text-5xl tracking-widest opacity-80 flex flex-col items-center uppercase">
+            <span className="text-xs tracking-[0.5em] mb-4">A GAME BY {(doc as any).developer}</span>
+            {(doc as any).gameName}
           </h2>
         </div>
       </div>
@@ -451,7 +461,7 @@ export default function PortfolioPage() {
     <div onMouseMove={handleMouseMove} className="min-h-screen w-full bg-transparent flex flex-col relative overflow-hidden font-sans">
 
       {/* Dynamic atmospheric video background (same as home) */}
-      <div className="fixed inset-0 w-full h-full z-0 pointer-events-none opacity-40">
+      <div className={`fixed inset-0 w-full h-full z-0 pointer-events-none transition-opacity duration-1000 ${activeCategory === 'games' ? 'opacity-0' : 'opacity-40'}`}>
         <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover">
           <source src={`${prefix}/website-bg.mp4`} type="video/mp4" />
         </video>
@@ -545,7 +555,7 @@ export default function PortfolioPage() {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.6, ease: "easeInOut" }}
-            className="absolute inset-0 z-50 bg-black/30 backdrop-blur-md"
+            className="absolute inset-0 z-50 bg-black"
           >
             {/* Back Button */}
             <div className="absolute top-8 left-8 z-50">

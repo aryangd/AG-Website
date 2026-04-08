@@ -35,7 +35,7 @@ export default function About() {
           transition={{ delay: 0.2 }}
           className="text-zinc-300 text-[17px] md:text-lg font-light leading-loose mb-6 max-w-[900px]"
         >
-          Specialized in <strong className="font-bold text-white">gameplay</strong> and <strong className="font-bold text-white">systems</strong>. Since 2017, I have been working on different video games and tools in both <strong className="font-bold text-white">Unreal Engine</strong> and <strong className="font-bold text-white">Unity</strong>, some of them launched in platforms like <strong className="font-bold text-white">UE Marketplace</strong>, <strong className="font-bold text-white">Google Play Store</strong> or <strong className="font-bold text-white">Steam</strong> and consoles such as <strong className="font-bold text-white">PlayStation</strong>, <strong className="font-bold text-white">Xbox</strong> and <strong className="font-bold text-white">Nintendo Switch</strong>, enhancing my skills as a <strong className="font-bold text-white">Game Designer</strong>.
+          Specializing in <strong className="font-bold text-white">Game Systems Design</strong>, <strong className="font-bold text-white">Game Balancing</strong> and <strong className="font-bold text-white">LiveOps Design</strong>, focused on creating <strong className="font-bold text-white">engaging</strong>, <strong className="font-bold text-white">scalable</strong> player experiences. I have been working on different video games and tools in both <strong className="font-bold text-white">Unreal Engine</strong> and <strong className="font-bold text-white">Unity</strong>, Worked on <strong className="font-bold text-white">Global IP's</strong> like <strong className="font-bold text-white">WWE Mayhem</strong>, <strong className="font-bold text-white">WRB (World Robot Boxing)</strong> and <strong className="font-bold text-white">Meta Horizon Games</strong>.
         </motion.p>
 
         {/* Paragraph 2 */}
@@ -46,7 +46,7 @@ export default function About() {
           transition={{ delay: 0.3 }}
           className="text-zinc-300 text-[17px] md:text-lg font-light leading-loose mb-20 max-w-[900px]"
         >
-          Nowadays, I am working at <strong className="font-bold text-white">Crema</strong> as a <strong className="font-bold text-white">Game Designer</strong> in charge of the <strong className="font-bold text-white">Combat Design</strong> for the next big project and also working at <strong className="font-bold text-white">U-tad</strong> as a <strong className="font-bold text-white">University Professor</strong> teaching the next generation of developers.
+          <strong className="font-bold text-white">Core gameplay systems</strong> that are both <strong className="font-bold text-white">Intuitive</strong> and <strong className="font-bold text-white">Deep</strong>, ensuring long-term player retention through thoughtful <strong className="font-bold text-white">Progression</strong>, <strong className="font-bold text-white">Economy design</strong>, and reward structures. My goal is to craft systems that not only entertain but evolve with the <strong className="font-bold text-white">community</strong>, driving both <strong className="font-bold text-white">player satisfaction</strong> and <strong className="font-bold text-white">game longevity</strong>.
         </motion.p>
 
         {/* Contact Section */}
@@ -57,7 +57,7 @@ export default function About() {
           transition={{ delay: 0.4 }}
           className="flex flex-col items-center"
         >
-          <span className="text-zinc-300 md:text-lg font-light mb-8">Are you interested in my work?</span>
+          <span className="text-zinc-300 md:text-lg font-light mb-8">Let's Connect</span>
 
           <a href="mailto:aryangollagd@gmail.com" className="group relative overflow-hidden flex items-center justify-center gap-3 bg-transparent border-2 border-white text-white w-[220px] h-[56px] rounded-none hover:bg-white hover:text-black transition-colors duration-300">
             <Mail className="w-5 h-5 transition-colors duration-300" strokeWidth={1.5} />
