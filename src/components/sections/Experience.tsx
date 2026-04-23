@@ -27,7 +27,20 @@ const TimelineNode = ({ progress, index }: { progress: any, index: number }) => 
 };
 
 export default function Experience() {
-  const experiences = [
+  type ExperienceData = {
+    role: string;
+    company: string;
+    duration: string;
+    desc: string[];
+    side: "left" | "right";
+    details: {
+      intro: string;
+      bullets1: string[];
+      bullets: string[];
+    };
+  };
+
+  const experiences: ExperienceData[] = [
     {
       role: "Game Designer",
       company: "Magnimus Studio",
