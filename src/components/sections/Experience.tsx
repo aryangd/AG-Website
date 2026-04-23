@@ -29,58 +29,48 @@ const TimelineNode = ({ progress, index }: { progress: any, index: number }) => 
 export default function Experience() {
   const experiences = [
     {
-      role: "Game Design Intern",
-      company: "Seamedu School of Design & Technology",
-      duration: "2022",
+      role: "Game Designer",
+      company: "Magnimus Studio",
+      duration: "2025 - 2026",
       desc: [
-        "Working with the developers of Temtem in a new project from conception to the release.",
-        "Specialized in Combat & AI."
+        "Worked with the developers of Magnimus Studio on a project for Meta Horizon Platform.",
+        
       ],
       side: "right" as const,
       details: {
-        intro: "Working with the developers of Temtem in a new project from conception to the release.",
+        intro: "Worked with the developers of Magnimus Studio on a project for Meta Horizon Platform.",
         bullets1: [],
         bullets: [
-          "Specialized in Combat & AI.",
-          "System design and implementation.",
-          "Prototyping new mechanics and driving character iteration."
+          "Defined creative vision and pitched innovative game concepts.",
+          "Authored complete GDDs outlining core mechanics, features and production needs.",
+          "Design level layouts and environments optimized for flow, challenge, and engagement.",
+          "Lead and managed cross functional teams.",
+          "Built UX/UI wireframes and visual flows to communicate gameplay and interface requirements.",
+          "Design game economy models, balance metrics, and simulation sheets to forecast player behavior and monetization.",
+          "Created structured frameworks for team ideation and strategic feature roadmapping.",
         ]
       }
     },
     {
-      role: "Technical Designer",
-      company: "Bohemia Interactive",
-      duration: "2023 - 2024",
+      role: "Game Designer",
+      company: "Reliance Games",
+      duration: "2023 - 2025",
       desc: [
-        "Worked with the developers of DayZ and Arma.",
-        "Developed Vigor, a Third-Person Looter Shooter for PS, Xbox One Series S/X and Nintendo Switch."
+        "Worked on WWE Mayhem, WRB and Little Singham Runs.",
       ],
       side: "left" as const,
       details: {
-        intro: "Worked with the developers of DayZ and Arma franchise.",
-        bullets1: [
-          "Game Developed: Vigor",
-          "Available on: PS4/5, Xbox One Series S/X, Nintendo Switch, Steam"
-        ],
+        intro: "Worked on WWE Mayhem, WRB and Little Singham Runs.",
+        bullets1: [],
         bullets: [
-          "Worked with Unreal Engine upgrading multiplayer systems.",
-          "Testing & Analytics.",
-          "Data gathering for weapon analytics: Spread, recoil, damage, bullet drop, damage falloff, etc.",
-          "Test maps & tools: Shooting ranges, obstacle courses, etc.",
-          "Prototyped new map events.",
-          "Added new UI elements: Rewards screen, Lobby, Crosshair Configuration, etc.",
-          "Prototyped new game modes and gameplay mechanics.",
-          "Designed & implemented seven premium packs (preview scenes and menus).",
-          "Weapons & Items design + implementation through data-driven systems.",
-          "Shooting range visual icons implementation.",
-          "System documentation.",
-          "Communication between design team and programming department.",
-          "Tools for Level Designers.",
-          "Onboarding and supervising new colleagues in the design department.",
-          "Materials and VFX fixes and optimization for the UI, weapons and items.",
-          "Utility widgets to streamline the team's workflow.",
-          "PC Port: Fixes and Implementations.",
-          "Bug fixing & Optimization."
+          "Designing in-game live events and quests",
+          "Balancing game difficulty and AI behavior based on live events.",
+          "Automating event processes for seamless execution.",
+          "Developing game features to enhance player engagement.",
+          "Analyzing player behavior and real-time game data to inform decisions.",
+          "Conducting A/B testing for game features and events using data-driven insights.",
+          "Designing characters and their abilities.",
+          "Ability balancing to maintain fair and balanced gameplay.",
         ]
       }
     },
